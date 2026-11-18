@@ -1,5 +1,5 @@
 /* ============================================================
-   STABILLE ADVOGADOS — motor de animação
+   STABILE ADVOGADOS — motor de animação
    Base: site-motion-starter (Vibehub, Aula 14).
    Lenis (scroll suave) + GSAP ScrollTrigger, um loop de rAF só.
    ============================================================ */

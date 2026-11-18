@@ -1,7 +1,7 @@
-# Stabille Advogados — site (modelo 2)
+# Stabile Advogados — site (modelo 2)
 
-> Modelo 2: mesma estrutura e conteúdo do modelo 1 (`../Site Stabille Advogados/`), com estética inspirada num layout de advocacia do Behance (preto + azul-marinho + dourado âmbar, Playfair Display, botões em pílula, cartões flutuantes) e o **Dr. Henrique na primeira dobra**, na foto de atendimento (a mesma do topo de Quem somos do modelo 1), em cor natural com degradê; sem o disco dourado, por pedido da Luana (18/11). O tema fica em `css/tema2.css` (carregado por último) e a primeira dobra em `#hero2` no `index.html` e no bloco "MODELO 2" do `js/main.js`.
-> Repositório: Negocios-creators/modelostabile2 · no ar: negocioscreators.com/stabille/modelo2/
+> Modelo 2: mesma estrutura e conteúdo do modelo 1 (`../Site Stabile Advogados/`), com estética inspirada num layout de advocacia do Behance (preto + azul-marinho + dourado âmbar, Playfair Display, botões em pílula, cartões flutuantes) e o **Dr. Henrique na primeira dobra**, na foto de atendimento (a mesma do topo de Quem somos do modelo 1), em cor natural com degradê; sem o disco dourado, por pedido da Luana (18/11). O tema fica em `css/tema2.css` (carregado por último) e a primeira dobra em `#hero2` no `index.html` e no bloco "MODELO 2" do `js/main.js`.
+> Repositório: Negocios-creators/modelostabile2 · no ar: negocioscreators.com/stabile/modelo2/
 > Pendência extra: confirmar que o advogado da foto de atendimento é o Dr. Henrique.
 
 ## Base (igual ao modelo 1)
@@ -56,7 +56,6 @@ As páginas internas saem de `_gerar_paginas.py` (fora do git). Para mudar texto
 - [ ] Ligar o formulário à área administrativa
 
 - [ ] Logo definitiva (a atual é provisória)
-- [ ] Grafia da marca: o site usa **Stabille Advogados** (pedido), mas o sobrenome registrado na OAB é **Stabile**
 - [ ] Confirmar o WhatsApp do escritório novo (hoje: (62) 9 8165-8049, o mesmo do S&P) e o fixo (62) 3010-0113
 - [ ] CNPJ e registro da sociedade na OAB da nova banca (o 1.290 e o CNPJ 18.665.561/0001-75 são da Stabile e Pessoa e ficaram de fora)
 - [ ] Foto do Dr. Henrique em alta resolução (a atual tem 377 px)
