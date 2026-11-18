@@ -1,8 +1,8 @@
 # Stabille Advogados — site (modelo 2)
 
-> Modelo 2: mesma estrutura e conteúdo do modelo 1 (`../Site Stabille Advogados/`), com estética inspirada num layout de advocacia do Behance (preto + azul-marinho + dourado âmbar, Playfair Display, botões em pílula, cartões flutuantes) e o **Dr. Henrique na primeira dobra**, recortado (rembg) na frente de um disco dourado. O tema fica em `css/tema2.css` (carregado por último) e a primeira dobra em `#hero2` no `index.html` e no bloco "MODELO 2" do `js/main.js`.
+> Modelo 2: mesma estrutura e conteúdo do modelo 1 (`../Site Stabille Advogados/`), com estética inspirada num layout de advocacia do Behance (preto + azul-marinho + dourado âmbar, Playfair Display, botões em pílula, cartões flutuantes) e o **Dr. Henrique na primeira dobra**, na foto de atendimento (a mesma do topo de Quem somos do modelo 1), em cor natural com degradê; sem o disco dourado, por pedido da Luana (18/11). O tema fica em `css/tema2.css` (carregado por último) e a primeira dobra em `#hero2` no `index.html` e no bloco "MODELO 2" do `js/main.js`.
 > Repositório: Negocios-creators/modelostabile2 · no ar: negocioscreators.com/stabille/modelo2/
-> Pendência extra: a foto do Henrique foi ampliada 2,5x de um original de 377 px. Com uma foto em alta (fundo liso), o recorte fica bem mais nítido.
+> Pendência extra: confirmar que o advogado da foto de atendimento é o Dr. Henrique.
 
 ## Base (igual ao modelo 1)
 

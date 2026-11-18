@@ -231,24 +231,20 @@ heroIntro.from('.reveal-hero', { opacity: 0, y: 46, duration: 1.15, stagger: 0.1
    ============================================================ */
 const hero2 = document.getElementById('hero2');
 if (hero2 && !reducedMotion) {
-  /* a centralização (translateX -50%) passa pro GSAP, senão o parallax de mouse a sobrescreve */
-  gsap.set(['.h2-henrique', '.h2-disc', '.h2-ring'], { x: 0, xPercent: -50 });
-  /* entrada: o disco dourado cresce, o Henrique sobe saindo do desfoque, os cartões aparecem */
+  /* entrada: a foto do atendimento se aproxima devagar e os cartões aparecem */
   heroIntro
-    .from('.h2-disc', { scale: .55, opacity: 0, duration: 1.4, ease: 'expo.out' }, 0)
-    .from('.h2-ring', { scale: .8, opacity: 0, duration: 1.6, ease: 'expo.out' }, .1)
-    .from('.h2-henrique', { yPercent: 18, opacity: 0, filter: 'blur(14px)', duration: 1.5, ease: 'power3.out' }, .15)
-    .from(['.h2-name', '.h2-team', '.h2-badge'], { opacity: 0, y: 30, scale: .92, duration: 1, stagger: .14, ease: 'back.out(1.6)' }, .7);
+    .from('.h2-photo img', { scale: 1.18, filter: 'blur(8px)', duration: 2.2, ease: 'expo.out' }, 0)
+    .from('.h2-tint', { opacity: 0, duration: 1.6 }, .2)
+    .from(['.h2-name', '.h2-team', '.h2-badge'], { opacity: 0, y: 30, scale: .92, duration: 1, stagger: .14, ease: 'back.out(1.6)' }, .8);
 
-  /* anel tracejado girando devagar e cartões flutuando */
-  gsap.to('.h2-ring', { rotation: 360, duration: 90, repeat: -1, ease: 'none', transformOrigin: '50% 50%' });
+  /* cartões flutuando */
   gsap.to('.h2-team', { y: -12, duration: 3.2, repeat: -1, yoyo: true, ease: 'sine.inOut' });
   gsap.to('.h2-badge', { y: 10, rotation: 6, duration: 2.6, repeat: -1, yoyo: true, ease: 'sine.inOut' });
   gsap.to('.h2-name', { y: -6, duration: 3.8, repeat: -1, yoyo: true, ease: 'sine.inOut', delay: .5 });
 
-  /* mouse: cada camada mexe numa profundidade (só com mouse de verdade) */
+  /* mouse: foto e cartões em profundidades diferentes (só com mouse de verdade) */
   if (window.matchMedia('(pointer: fine)').matches) {
-    const camadas = [['.h2-henrique', 14], ['.h2-disc', -22], ['.h2-ring', -32], ['.h2-team', 30], ['.h2-badge', 40], ['.h2-name', 22], ['.h2-bg', -12]];
+    const camadas = [['.h2-photo', -16], ['.h2-team', 30], ['.h2-badge', 40], ['.h2-name', 22]];
     const setters = camadas.map(([sel, f]) => [gsap.quickTo(sel, 'x', { duration: 1.2, ease: 'power3' }), gsap.quickTo(sel, 'y', { duration: 1.2, ease: 'power3' }), f]);
     hero2.addEventListener('pointermove', (e) => {
       const nx = e.clientX / innerWidth - .5, ny = e.clientY / innerHeight - .5;
@@ -257,11 +253,11 @@ if (hero2 && !reducedMotion) {
     hero2.addEventListener('pointerleave', () => setters.forEach(([sx, sy]) => { sx(0); sy(0); }));
   }
 
-  /* scroll: o texto sobe e some, o Henrique desce mais devagar, o disco cresce */
+  /* scroll: o texto sobe e some, a foto desce mais devagar e cresce um pouco */
   const st = { trigger: hero2, start: 'top top', end: 'bottom top', scrub: true };
   gsap.to('.h2-text', { yPercent: -18, opacity: 0, ease: 'none', scrollTrigger: st });
-  gsap.to('.h2-visual', { yPercent: 12, ease: 'none', scrollTrigger: st });
-  gsap.to('.h2-disc', { scale: 1.18, ease: 'none', scrollTrigger: st });
+  gsap.to('.h2-visual', { yPercent: 10, ease: 'none', scrollTrigger: st });
+  gsap.fromTo('.h2-photo', { yPercent: 0 }, { yPercent: 14, scale: 1.06, ease: 'none', scrollTrigger: st });
 }
 /* botões "magnéticos": seguem o mouse de leve */
 if (!reducedMotion && window.matchMedia('(pointer: fine)').matches) {
