@@ -11,7 +11,7 @@ const CONFIG = {
   heroScrollLength: '+=220%',
   breakpointMobile: 768,
   breakpointGallery: 960,                /* abaixo disso a galeria vira rolagem lateral nativa */
-  particleRGB: '201,164,106',
+  particleRGB: '201,149,94',
   particleCountDesktop: 60,
   particleCountMobile: 24
 };
