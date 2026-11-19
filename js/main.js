@@ -233,8 +233,8 @@ const hero2 = document.getElementById('hero2');
 if (hero2 && !reducedMotion) {
   /* entrada: a foto do atendimento se aproxima devagar e os cartões aparecem */
   heroIntro
-    .from('.h2-photo img', { scale: 1.18, filter: 'blur(8px)', duration: 2.2, ease: 'expo.out' }, 0)
-    .from('.h2-tint', { opacity: 0, duration: 1.6 }, .2)
+    .from('.h2-retrato', { y: 60, opacity: 0, duration: 1.4, ease: 'expo.out' }, .1)
+    .from('.h2-retrato img', { scale: 1.12, duration: 2, ease: 'expo.out' }, .1)
     .from(['.h2-name', '.h2-team', '.h2-badge'], { opacity: 0, y: 30, scale: .92, duration: 1, stagger: .14, ease: 'back.out(1.6)' }, .8);
 
   /* cartões flutuando */
@@ -244,7 +244,7 @@ if (hero2 && !reducedMotion) {
 
   /* mouse: foto e cartões em profundidades diferentes (só com mouse de verdade) */
   if (window.matchMedia('(pointer: fine)').matches) {
-    const camadas = [['.h2-photo', -16], ['.h2-team', 30], ['.h2-badge', 40], ['.h2-name', 22]];
+    const camadas = [['.h2-retrato', -14], ['.h2-team', 30], ['.h2-badge', 40], ['.h2-name', 22]];
     const setters = camadas.map(([sel, f]) => [gsap.quickTo(sel, 'x', { duration: 1.2, ease: 'power3' }), gsap.quickTo(sel, 'y', { duration: 1.2, ease: 'power3' }), f]);
     hero2.addEventListener('pointermove', (e) => {
       const nx = e.clientX / innerWidth - .5, ny = e.clientY / innerHeight - .5;
@@ -257,7 +257,7 @@ if (hero2 && !reducedMotion) {
   const st = { trigger: hero2, start: 'top top', end: 'bottom top', scrub: true };
   gsap.to('.h2-text', { yPercent: -18, opacity: 0, ease: 'none', scrollTrigger: st });
   gsap.to('.h2-visual', { yPercent: 10, ease: 'none', scrollTrigger: st });
-  gsap.fromTo('.h2-photo', { yPercent: 0 }, { yPercent: 14, scale: 1.06, ease: 'none', scrollTrigger: st });
+  gsap.to('.h2-retrato', { yPercent: 8, ease: 'none', scrollTrigger: st });
 }
 /* botões "magnéticos": seguem o mouse de leve */
 if (!reducedMotion && window.matchMedia('(pointer: fine)').matches) {
