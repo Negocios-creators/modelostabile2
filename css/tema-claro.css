@@ -272,3 +272,16 @@ footer a, .foot-top nav a { color: #E6E8EC; }
 #contato .btn-ghost { color: var(--ink); border-color: rgba(255, 255, 255, .18); background: rgba(255, 255, 255, .04); }
 #contato .mapa iframe { filter: grayscale(1) invert(.9) contrast(.85) brightness(.85) sepia(.2) hue-rotate(180deg); }
 footer { border-top: 1px solid rgba(201, 149, 94, .12); }
+
+/* ============================================================
+   DETALHES NA COR DAS CADEIRAS DO ESCRITÓRIO (couro bordô) · 19/11
+   bem sutis: pontinho dos selos, losangos da faixa, filete dos cartões,
+   barra de leitura e linha de destaque ao passar o mouse
+   ============================================================ */
+:root { --couro: #7A2E2A; --couro-hi: #9E4A3C; }
+.kicker::before { display: inline-block !important; content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--couro-hi); margin-right: 9px; align-self: center; opacity: .9; }
+.m2 .marquee-track i { background: var(--couro); }
+#prova .prova-item { box-shadow: inset 0 -2px 0 var(--couro-hi), 0 22px 50px rgba(24, 32, 43, .16); }
+#atuacao .area-card::before { background: linear-gradient(90deg, var(--couro-hi), var(--accent) 60%, transparent); }
+.progress span { background: linear-gradient(90deg, var(--couro), #C9955E) !important; }
+.faq-item[open] summary { color: var(--couro); }
