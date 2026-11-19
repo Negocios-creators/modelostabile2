@@ -234,7 +234,6 @@ if (hero2 && !reducedMotion) {
   /* entrada: a foto do atendimento se aproxima devagar e os cartões aparecem */
   heroIntro
     .from('.h2-retrato', { y: 60, opacity: 0, duration: 1.4, ease: 'expo.out' }, .1)
-    .from('.h2-retrato img', { scale: 1.12, duration: 2, ease: 'expo.out' }, .1)
     .from(['.h2-name', '.h2-team', '.h2-badge'], { opacity: 0, y: 30, scale: .92, duration: 1, stagger: .14, ease: 'back.out(1.6)' }, .8);
 
   /* cartões flutuando */
