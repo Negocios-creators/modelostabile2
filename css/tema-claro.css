@@ -146,39 +146,43 @@ footer a, .foot-top nav a { color: #E6E8EC; }
 }
 
 /* ============================================================
-   BLOCOS PRETOS INTERCALADOS (19/11): alguns como era antes, outros claros
+   SÓ A CAPA ESCURA (19/11, pedido da Luana): o resto intercala branco e bege.
+   Números, situações e áreas com os cartões azul-marinho de antes.
    ============================================================ */
-#prova, #atuacao, #depoimentos, #blog-home, #contato, #qs-missao, .cta-band, footer {
-  --bg: #09090B; --bg-2: #0E0F13; --surface: #0F1A2C; --surface-2: #15233A;
+#prova, #atuacao, #henrique, #processo, #faq, #qs-historia, #areas-lista, .art-wrap, footer { background: #FFFFFF; }
+#situacoes, #escritorio, #depoimentos, #blog-home, #contato, #qs-missao, #equipe, #blog-lista, #contato-pagina, .art-outros, .cta-band { background: var(--bg-2); }
+/* cartões escuros */
+#prova .prova-item, #situacoes .glass, #atuacao .area-card {
   --ink: #F7F4EE; --muted: #A4A8B2; --accent: #C9955E; --accent-hi: #E8C08C;
-  --line: rgba(201, 149, 94, .16); --line-2: rgba(201, 149, 94, .34);
-  background: var(--bg); color: var(--ink);
+  --line: rgba(201, 149, 94, .16); color: var(--ink);
+  background: linear-gradient(160deg, #15233A, #0F1A2C); border-color: rgba(255, 255, 255, .06); box-shadow: 0 22px 50px rgba(24, 32, 43, .16);
 }
-#atuacao, #blog-home { background: var(--bg-2); }
-#depoimentos { background: #09090B; }
-.dep-shade { background: linear-gradient(180deg, #09090B 0%, rgba(9, 9, 11, .78) 25%, rgba(9, 9, 11, .78) 75%, #09090B 100%); }
-#depoimentos video { opacity: .3; }
-footer { background: #060608; }
-#prova .prova-item { background: var(--surface); border-color: rgba(255, 255, 255, .06); box-shadow: none; }
-#prova .prova-item strong { color: var(--accent-hi); }
-#prova .prova-item > span { color: var(--muted); }
-#atuacao .area-card { background: var(--surface); border-color: rgba(255, 255, 255, .06); }
-#atuacao .area-card:hover { background: var(--surface-2); box-shadow: none; }
-#atuacao .area-card p, #atuacao .section-sub { color: var(--muted); }
-#blog-home .post-card { background: var(--surface); border-color: rgba(255, 255, 255, .06); }
-#blog-home .post-card p { color: var(--muted); }
-#contato .contato-box { background: var(--surface); }
-#contato .contato-dados dd { color: var(--ink); }
-#contato .contato-grid { box-shadow: none; }
-#contato .mapa iframe { filter: grayscale(1) invert(.9) contrast(.85) brightness(.85) sepia(.2) hue-rotate(180deg); }
-#qs-missao { padding-top: clamp(64px, 9vw, 120px); }
-#qs-missao .missao { background: linear-gradient(160deg, rgba(21, 35, 58, .6), rgba(9, 9, 11, .2)); border-color: var(--line); }
-#qs-missao .missao-aspas { background: transparent; color: var(--accent-hi); }
-.cta-band { background: radial-gradient(ellipse 60% 120% at 50% 120%, rgba(201, 149, 94, .28), transparent 70%), #09090B; }
-.cta-band h2 em { color: var(--accent-hi); }
-#prova .kicker, #atuacao .kicker, #blog-home .kicker, #contato .kicker, #depoimentos .kicker { color: var(--accent-hi); background: rgba(201, 149, 94, .08); border-color: var(--line-2); }
-#prova h2 em, #atuacao h2 em, #blog-home h2 em, #contato h2 em, .cta-band h2 em, #qs-missao blockquote em { color: var(--accent-hi); }
-#blog-home .btn-ghost, #contato .btn-ghost { color: var(--ink); border-color: rgba(255, 255, 255, .18); background: rgba(255, 255, 255, .04); }
+#prova .prova-item strong, #atuacao .area-card h3, #situacoes .glass h3 { color: var(--ink); }
+#prova .prova-item strong i, #prova .prova-item strong { color: var(--accent-hi); }
+#prova .prova-item > span, #situacoes .glass p, #atuacao .area-card p { color: var(--muted); }
+#situacoes .card-num { background: rgba(232, 192, 140, .12); color: var(--accent-hi); }
+#atuacao .area-card:hover { background: linear-gradient(160deg, #1B2C47, #13213A); box-shadow: 0 30px 60px rgba(24, 32, 43, .22); }
+/* depoimentos claros */
+#depoimentos { color: var(--ink); }
+#depoimentos video { opacity: .1; }
+.dep-shade { background: linear-gradient(180deg, var(--bg-2) 0%, rgba(239, 231, 218, .86) 25%, rgba(239, 231, 218, .86) 75%, var(--bg-2) 100%); }
+#depoimentos h2 { color: var(--ink); }
+#depoimentos h2 em { color: var(--accent); }
+#depoimentos .kicker { color: var(--accent-hi); background: rgba(168, 118, 63, .07); border-color: var(--line-2); }
+.dep-card { background: #fff; border-color: var(--line); box-shadow: 0 16px 40px rgba(24, 32, 43, .06); }
+.dep-card cite { color: var(--accent-hi); }
+.dep-more { color: var(--muted); border-color: var(--line); }
+/* missão e faixa de chamada claras */
+#qs-missao .missao { background: #fff; border-color: var(--line); }
+#qs-missao .missao-aspas { color: var(--accent); }
+.cta-band { background: radial-gradient(ellipse 60% 120% at 50% 120%, rgba(201, 149, 94, .2), transparent 70%), var(--bg-2); }
+/* rodapé claro, logo escura */
+footer { color: var(--muted); border-top: 1px solid var(--line); }
+footer a, .foot-top nav a { color: var(--ink); }
+.foot-cols { color: var(--ink); border-color: var(--line); }
+.foot-cols span { color: var(--accent-hi); }
+.foot-top, .foot-bottom { border-color: var(--line); }
+.foot-bottom, .foot-bottom .legal { color: var(--muted); }
 
 /* ============================================================
    CAPA NO ESTILO DA PRIMEIRA VERSÃO (19/11): foto ocupando a capa, esfumada no escuro
@@ -231,3 +235,4 @@ footer { background: #060608; }
 .menu-btn span, #header:not(.scrolled) .menu-btn span { background: #E6E8EC; }
 .menu-mobile { background: rgba(9, 9, 11, .97); }
 .menu-mobile a:not(.btn) { color: #F7F4EE; }
+.dep-card p { color: var(--ink); }
