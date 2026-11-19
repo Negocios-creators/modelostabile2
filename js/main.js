@@ -426,3 +426,12 @@ faqItems.forEach((item) => {
 document.getElementById('year').textContent = new Date().getFullYear();
 window.addEventListener('load', () => ScrollTrigger.refresh());
 document.fonts && document.fonts.ready.then(() => ScrollTrigger.refresh());
+
+
+/* banner do Dr. Henrique (19/11): a foto se aproxima devagar enquanto a seção passa */
+(() => {
+  const bg = document.querySelector('.hen-banner .hen-bg img');
+  if (!bg || reducedMotion) return;
+  gsap.fromTo(bg, { scale: 1.12, yPercent: -3 }, { scale: 1, yPercent: 3, ease: 'none',
+    scrollTrigger: { trigger: '.hen-banner', start: 'top bottom', end: 'bottom top', scrub: true } });
+})();
