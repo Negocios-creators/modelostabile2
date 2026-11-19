@@ -149,7 +149,7 @@ footer a, .foot-top nav a { color: #E6E8EC; }
    SÓ A CAPA ESCURA (19/11, pedido da Luana): o resto intercala branco e bege.
    Números, situações e áreas com os cartões azul-marinho de antes.
    ============================================================ */
-#prova, #atuacao, #henrique, #processo, #faq, #qs-historia, #areas-lista, .art-wrap, footer { background: #FFFFFF; }
+#prova, #atuacao, #henrique, #processo, #faq, #qs-historia, #areas-lista, .art-wrap { background: #FFFFFF; }
 #situacoes, #escritorio, #depoimentos, #blog-home, #contato, #qs-missao, #equipe, #blog-lista, #contato-pagina, .art-outros, .cta-band { background: var(--bg-2); }
 /* cartões escuros */
 #prova .prova-item, #situacoes .glass, #atuacao .area-card {
@@ -176,13 +176,14 @@ footer a, .foot-top nav a { color: #E6E8EC; }
 #qs-missao .missao { background: #fff; border-color: var(--line); }
 #qs-missao .missao-aspas { color: var(--accent); }
 .cta-band { background: radial-gradient(ellipse 60% 120% at 50% 120%, rgba(201, 149, 94, .2), transparent 70%), var(--bg-2); }
-/* rodapé claro, logo escura */
-footer { color: var(--muted); border-top: 1px solid var(--line); }
-footer a, .foot-top nav a { color: var(--ink); }
-.foot-cols { color: var(--ink); border-color: var(--line); }
+/* rodapé preto, como era antes (pedido da Luana 19/11), logo dourada */
+footer { --bg: #060608; --ink: #F7F4EE; --muted: #A4A8B2; --accent: #C9955E; --accent-hi: #E8C08C;
+  --line: rgba(201, 149, 94, .16); --line-2: rgba(201, 149, 94, .34); background: #060608 !important; color: var(--muted); border-top: 0; }
+footer a, .foot-top nav a { color: #E6E8EC; }
+.foot-cols { color: var(--ink); border-color: rgba(255, 255, 255, .1); }
 .foot-cols span { color: var(--accent-hi); }
-.foot-top, .foot-bottom { border-color: var(--line); }
-.foot-bottom, .foot-bottom .legal { color: var(--muted); }
+.foot-top, .foot-bottom { border-color: rgba(255, 255, 255, .1); }
+.foot-bottom, .foot-bottom .legal { color: #A4A8B2; }
 
 /* ============================================================
    CAPA NO ESTILO DA PRIMEIRA VERSÃO (19/11): foto ocupando a capa, esfumada no escuro
