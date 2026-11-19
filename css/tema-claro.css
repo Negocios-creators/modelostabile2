@@ -256,3 +256,19 @@ footer a, .foot-top nav a { color: #E6E8EC; }
   .h2-shade { background: linear-gradient(180deg, rgba(9, 9, 11, .5) 0%, transparent 18%, transparent 40%, rgba(9, 9, 11, .9) 56%, #09090B 66%); }
 }
 @media (prefers-reduced-motion: reduce) { .h2-retrato img { animation: none; } }
+
+/* endereço (contato) preto, junto com o rodapé (pedido da Luana 19/11) */
+#contato {
+  --bg: #09090B; --bg-2: #0E0F13; --surface: #0F1A2C; --surface-2: #15233A;
+  --ink: #F7F4EE; --muted: #A4A8B2; --accent: #C9955E; --accent-hi: #E8C08C;
+  --line: rgba(201, 149, 94, .16); --line-2: rgba(201, 149, 94, .34);
+  background: #09090B !important; color: var(--ink);
+}
+#contato .contato-box { background: var(--surface); }
+#contato .contato-dados dd, #contato h2 { color: var(--ink); }
+#contato h2 em { color: var(--accent-hi); }
+#contato .kicker { color: var(--accent-hi); background: rgba(201, 149, 94, .08); border-color: var(--line-2); }
+#contato .contato-grid { box-shadow: none; }
+#contato .btn-ghost { color: var(--ink); border-color: rgba(255, 255, 255, .18); background: rgba(255, 255, 255, .04); }
+#contato .mapa iframe { filter: grayscale(1) invert(.9) contrast(.85) brightness(.85) sepia(.2) hue-rotate(180deg); }
+footer { border-top: 1px solid rgba(201, 149, 94, .12); }
