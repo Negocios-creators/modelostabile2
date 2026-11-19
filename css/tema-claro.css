@@ -144,3 +144,90 @@ footer a, .foot-top nav a { color: #E6E8EC; }
   .h2-badge { right: 4%; bottom: auto; top: 10%; }
   .h2-text { background: none; margin-top: 0; padding-top: 6px; }
 }
+
+/* ============================================================
+   BLOCOS PRETOS INTERCALADOS (19/11): alguns como era antes, outros claros
+   ============================================================ */
+#prova, #atuacao, #depoimentos, #blog-home, #contato, #qs-missao, .cta-band, footer {
+  --bg: #09090B; --bg-2: #0E0F13; --surface: #0F1A2C; --surface-2: #15233A;
+  --ink: #F7F4EE; --muted: #A4A8B2; --accent: #C9955E; --accent-hi: #E8C08C;
+  --line: rgba(201, 149, 94, .16); --line-2: rgba(201, 149, 94, .34);
+  background: var(--bg); color: var(--ink);
+}
+#atuacao, #blog-home { background: var(--bg-2); }
+#depoimentos { background: #09090B; }
+.dep-shade { background: linear-gradient(180deg, #09090B 0%, rgba(9, 9, 11, .78) 25%, rgba(9, 9, 11, .78) 75%, #09090B 100%); }
+#depoimentos video { opacity: .3; }
+footer { background: #060608; }
+#prova .prova-item { background: var(--surface); border-color: rgba(255, 255, 255, .06); box-shadow: none; }
+#prova .prova-item strong { color: var(--accent-hi); }
+#prova .prova-item > span { color: var(--muted); }
+#atuacao .area-card { background: var(--surface); border-color: rgba(255, 255, 255, .06); }
+#atuacao .area-card:hover { background: var(--surface-2); box-shadow: none; }
+#atuacao .area-card p, #atuacao .section-sub { color: var(--muted); }
+#blog-home .post-card { background: var(--surface); border-color: rgba(255, 255, 255, .06); }
+#blog-home .post-card p { color: var(--muted); }
+#contato .contato-box { background: var(--surface); }
+#contato .contato-dados dd { color: var(--ink); }
+#contato .contato-grid { box-shadow: none; }
+#contato .mapa iframe { filter: grayscale(1) invert(.9) contrast(.85) brightness(.85) sepia(.2) hue-rotate(180deg); }
+#qs-missao { padding-top: clamp(64px, 9vw, 120px); }
+#qs-missao .missao { background: linear-gradient(160deg, rgba(21, 35, 58, .6), rgba(9, 9, 11, .2)); border-color: var(--line); }
+#qs-missao .missao-aspas { background: transparent; color: var(--accent-hi); }
+.cta-band { background: radial-gradient(ellipse 60% 120% at 50% 120%, rgba(201, 149, 94, .28), transparent 70%), #09090B; }
+.cta-band h2 em { color: var(--accent-hi); }
+#prova .kicker, #atuacao .kicker, #blog-home .kicker, #contato .kicker, #depoimentos .kicker { color: var(--accent-hi); background: rgba(201, 149, 94, .08); border-color: var(--line-2); }
+#prova h2 em, #atuacao h2 em, #blog-home h2 em, #contato h2 em, .cta-band h2 em, #qs-missao blockquote em { color: var(--accent-hi); }
+#blog-home .btn-ghost, #contato .btn-ghost { color: var(--ink); border-color: rgba(255, 255, 255, .18); background: rgba(255, 255, 255, .04); }
+
+/* ============================================================
+   CAPA NO ESTILO DA PRIMEIRA VERSÃO (19/11): foto ocupando a capa, esfumada no escuro
+   (agora com o retrato oficial do Dr. Henrique, sem recorte)
+   ============================================================ */
+#hero2 { --ink: #F7F4EE; --muted: #C9CCD3; background: #09090B; color: #F7F4EE; }
+#hero2::before { display: none; }
+.h2-retrato { position: absolute; top: 0; right: 0; bottom: 0; width: min(64%, 1000px); margin: 0; aspect-ratio: auto; z-index: 0; }
+.h2-retrato::before { display: none; }
+.h2-retrato img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 16%; border-radius: 0; box-shadow: none;
+  filter: saturate(1.02) contrast(1.04);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, .55) 20%, #000 46%);
+  mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, .55) 20%, #000 46%); }
+.h2-shade { display: block; z-index: 1; background:
+  radial-gradient(ellipse 34% 60% at 72% 40%, rgba(247, 197, 91, .10), transparent 70%),
+  linear-gradient(90deg, rgba(9, 9, 11, .96) 0%, rgba(9, 9, 11, .8) 32%, rgba(9, 9, 11, .25) 54%, rgba(9, 9, 11, 0) 70%, rgba(9, 9, 11, .2) 100%),
+  linear-gradient(180deg, rgba(9, 9, 11, .55) 0%, transparent 22%, transparent 72%, rgba(9, 9, 11, .85) 92%, #09090B 100%); }
+.h2-grid { align-items: stretch; z-index: 3; }
+.h2-welcome, .h2-call small { color: #fff; }
+.h2-sub { color: #C9CCD3; }
+.h2-call strong { color: #E8C08C; }
+.h2-stat { background: rgba(15, 26, 44, .78); border-color: rgba(255, 255, 255, .06); box-shadow: none; }
+.h2-stat strong { color: #fff; }
+.h2-stat strong i { color: #E8C08C; }
+.h2-visual { display: block; position: relative; height: 100%; min-height: 480px; padding: 0; }
+.h2-name { left: 6%; right: auto; bottom: 14%; background: rgba(9, 9, 11, .62); border: 1px solid rgba(255, 255, 255, .12); box-shadow: none; }
+.h2-name strong { color: #fff; }
+.h2-name span { color: #E8C08C; }
+.h2-team { right: 0; top: auto; bottom: 14%; }
+.h2-badge { left: auto; right: 4%; top: 10%; bottom: auto; background: rgba(9, 9, 11, .5); border-color: rgba(201, 149, 94, .34); box-shadow: none; }
+.h2-badge svg { stroke: #E8C08C; }
+#hero2 .btn-ghost { color: #fff; }
+/* cabeçalho por cima da capa escura: transparente no topo, claro depois de rolar */
+#header:not(.scrolled) { background: transparent; box-shadow: none; backdrop-filter: none; -webkit-backdrop-filter: none; }
+#header:not(.scrolled) nav a { color: #E6E8EC; }
+#header:not(.scrolled) .menu-btn span { background: #E6E8EC; }
+@media (max-width: 768px) {
+  .h2-retrato { left: 0; width: 100%; bottom: auto; height: 62svh; min-height: 400px; max-height: 600px; }
+  .h2-retrato img { object-position: 50% 12%; -webkit-mask-image: linear-gradient(180deg, #000 60%, transparent 100%); mask-image: linear-gradient(180deg, #000 60%, transparent 100%); }
+  .h2-shade { background: linear-gradient(180deg, rgba(9, 9, 11, .5) 0%, transparent 18%, transparent 40%, rgba(9, 9, 11, .9) 56%, #09090B 66%); }
+  .h2-visual { order: -1; height: 50svh; min-height: 330px; max-height: 500px; margin: 0 var(--pad); padding: 0; }
+  .h2-name { left: auto; right: 0; bottom: 18%; }
+  .h2-text { margin-top: -40px; padding-top: 26px; }
+}
+/* cabeçalho escuro com a logo dourada (as capas são escuras) */
+#header, #header:not(.scrolled) { background: transparent; box-shadow: none; backdrop-filter: none; -webkit-backdrop-filter: none; }
+#header.scrolled { background: rgba(9, 9, 11, .86); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: 0 1px 0 rgba(201, 149, 94, .2); }
+#header nav a, #header:not(.scrolled) nav a { color: #E6E8EC; }
+#header nav a:hover, #header nav a[aria-current="page"] { color: #E8C08C; }
+.menu-btn span, #header:not(.scrolled) .menu-btn span { background: #E6E8EC; }
+.menu-mobile { background: rgba(9, 9, 11, .97); }
+.menu-mobile a:not(.btn) { color: #F7F4EE; }
