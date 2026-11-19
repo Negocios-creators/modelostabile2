@@ -176,7 +176,7 @@ if (!reducedMotion) {
    CONFIG_FORM.endpoint fica vazio até existir a área administrativa do site.
    Com endpoint: envia JSON por POST. Sem endpoint: abre o WhatsApp do escritório já com a mensagem
    preenchida, pra nenhum contato se perder enquanto isso. */
-const CONFIG_FORM = { endpoint: '', whatsapp: '5562981658049' };
+const CONFIG_FORM = { endpoint: '', whatsapp: '5562981618792' };
 const form = document.getElementById('fale-conosco');
 if (form) {
   const status = form.querySelector('.form-status');
@@ -436,4 +436,47 @@ document.fonts && document.fonts.ready.then(() => ScrollTrigger.refresh());
   if (!bg || reducedMotion) return;
   gsap.fromTo(bg, { scale: 1.12, yPercent: -3 }, { scale: 1, yPercent: 3, ease: 'none',
     scrollTrigger: { trigger: '.hen-banner', start: 'top bottom', end: 'bottom top', scrub: true } });
+})();
+
+
+/* celular (19/11): situações, áreas e depoimentos viram carrossel numa faixa só,
+   passando sozinho devagar; parou de passar quando a pessoa toca, volta depois de um tempo */
+(() => {
+  const mq = window.matchMedia('(max-width: 768px)');
+  const alvos = [...document.querySelectorAll('.carrossel-m-alvo')];
+  if (!alvos.length) return;
+  const estado = new Map();
+  const montar = () => {
+    alvos.forEach((el) => {
+      const ligado = mq.matches;
+      el.classList.toggle('carrossel-m', ligado);
+      let s = estado.get(el);
+      if (ligado && !s) {
+        const dots = document.createElement('div');
+        dots.className = 'carrossel-dots'; dots.setAttribute('aria-hidden', 'true');
+        [...el.children].forEach(() => dots.appendChild(document.createElement('i')));
+        el.after(dots);
+        s = { dots, pausa: 0, timer: null };
+        const atual = () => { const w = el.children[0].getBoundingClientRect().width + 12; return Math.round(el.scrollLeft / w); };
+        const marcar = () => [...dots.children].forEach((d, i) => d.classList.toggle('on', i === atual()));
+        el.addEventListener('scroll', marcar, { passive: true });
+        ['touchstart', 'pointerdown', 'wheel'].forEach((ev) => el.addEventListener(ev, () => { s.pausa = Date.now() + 7000; }, { passive: true }));
+        let visivel = false;
+        new IntersectionObserver((es) => { visivel = es[0].isIntersecting; }, { threshold: .4 }).observe(el);
+        s.timer = setInterval(() => {
+          if (!visivel || Date.now() < s.pausa || document.hidden || reducedMotion) return;
+          const n = el.children.length, prox = (atual() + 1) % n;
+          const alvo = el.children[prox];
+          el.scrollTo({ left: prox === 0 ? 0 : alvo.offsetLeft - el.children[0].offsetLeft, behavior: 'smooth' });
+        }, 3800);
+        marcar();
+        estado.set(el, s);
+      } else if (!ligado && s) {
+        clearInterval(s.timer); s.dots.remove(); estado.delete(el);
+      }
+    });
+    if (window.ScrollTrigger) ScrollTrigger.refresh();
+  };
+  montar();
+  mq.addEventListener('change', montar);
 })();

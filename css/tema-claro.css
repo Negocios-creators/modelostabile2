@@ -343,3 +343,59 @@ footer { border-top: 1px solid rgba(201, 149, 94, .12); }
   .hen-banner .hen-bg { margin: 0 calc(-1 * var(--pad)); overflow: hidden; }
   .hen-veu { left: 0; right: 0; }
 }
+
+/* ============================================================
+   CELULAR (19/11, pedidos da Luana)
+   1. capa enxuta: foto + widgets (nome, equipe, selo), uma frase e um botão
+   2/3. situações e áreas em carrossel numa faixa só, cartões mais baixos
+   4. depoimentos em carrossel
+   ============================================================ */
+html { background: #09090B; }   /* o "puxão" do iPhone no fim da página fica escuro, igual ao rodapé */
+@media (max-width: 768px) {
+  /* ---- capa ---- */
+  #hero2 { min-height: 100svh; display: flex; flex-direction: column; }
+  #hero2 .h2-retrato { left: 0; right: 0; top: 0; bottom: auto; width: 100%; height: 76svh; min-height: 460px; max-height: none; }
+  #hero2 .h2-retrato img { object-position: 50% 14%; -webkit-mask-image: none; mask-image: none; }
+  #hero2 .h2-shade { background: linear-gradient(180deg, rgba(9, 9, 11, .55) 0%, transparent 16%, transparent 46%, rgba(9, 9, 11, .75) 62%, #09090B 76%); }
+  #hero2 .h2-grid { flex: 1; display: flex; flex-direction: column; padding: 0; gap: 0; }
+  #hero2 .h2-visual { order: 0; position: relative; height: 56svh; min-height: 360px; max-height: none; margin: 0 var(--pad); padding: 0; }
+  #hero2 .h2-badge { top: 92px; right: 0; left: auto; bottom: auto; width: 46px; height: 46px; }
+  #hero2 .h2-name { right: 0; left: auto; bottom: 22%; padding: 10px 14px; border-radius: 14px; }
+  #hero2 .h2-name strong { font-size: 15px; }
+  #hero2 .h2-name span { font-size: 11px; }
+  #hero2 .h2-team { display: block; left: 0; right: auto; top: auto; bottom: 4%; width: 118px; padding: 8px 8px 10px; border-radius: 14px; text-align: center; }
+  #hero2 .h2-team img { border-radius: 8px; margin-bottom: 6px; }
+  #hero2 .h2-team span { font-size: 13px; margin-bottom: 0; line-height: 1.2; }
+  #hero2 .h2-team .ico { display: none; }
+  #hero2 .h2-text { order: 1; margin-top: auto; padding: 8px var(--pad) 34px; background: none; text-align: left; }
+  #hero2 .h2-welcome, #hero2 .h2-sub, #hero2 .h2-call, #hero2 .h2-stats { display: none; }
+  #hero2 .h2-text h1 { font-size: clamp(34px, 9.6vw, 42px); line-height: 1.04; margin: 0 0 22px; }
+  #hero2 .h2-ctas { margin: 0; }
+  #hero2 .h2-ctas .btn-pill { width: 100%; justify-content: space-between; }
+
+  /* ---- carrosséis numa faixa só ---- */
+  .carrossel-m { display: flex !important; grid-template-columns: none !important; gap: 12px !important; overflow-x: auto; overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory; margin-left: calc(-1 * var(--pad)); margin-right: calc(-1 * var(--pad)); padding: 6px var(--pad) 22px; scroll-padding: 0 var(--pad);
+    scrollbar-width: none; -webkit-overflow-scrolling: touch; background: none !important; border: 0 !important; box-shadow: none !important; }
+  .carrossel-m::-webkit-scrollbar { display: none; }
+  .carrossel-m > * { flex: 0 0 84%; scroll-snap-align: start; min-height: 0 !important; transform: none !important; }
+  #situacoes .carrossel-m .glass { padding: 22px 22px 24px; }
+  #situacoes .carrossel-m .card-num { width: 34px; height: 34px; font-size: 12px; margin-bottom: 14px; }
+  #situacoes .carrossel-m h3 { font-size: 22px; margin-bottom: 8px; }
+  #situacoes .carrossel-m p { font-size: 14px; line-height: 1.55; }
+  #atuacao .carrossel-m .area-card { padding: 20px 22px 20px; }
+  #atuacao .carrossel-m .area-idx { margin-bottom: 10px; }
+  #atuacao .carrossel-m h3 { font-size: 22px; margin-bottom: 6px; }
+  #atuacao .carrossel-m p { font-size: 14px; margin-bottom: 14px; }
+  #depoimentos .carrossel-m { align-items: stretch; }
+  #depoimentos .carrossel-m .dep-card { padding: 24px 22px; grid-column: auto !important; }
+  #depoimentos .carrossel-m .dep-card p { font-size: 15px; }
+  .carrossel-dots { display: flex; justify-content: center; gap: 7px; margin-top: 2px; }
+  .carrossel-dots i { width: 6px; height: 6px; border-radius: 50%; background: rgba(168, 118, 63, .28); transition: width .4s, background .3s; }
+  .carrossel-dots i.on { width: 20px; border-radius: 4px; background: var(--accent); }
+}
+@media (max-width: 768px) {
+  #hero2 .h2-name { bottom: 3%; }
+  #hero2 .h2-team { bottom: 30%; }
+  #hero2 .h2-text { padding-bottom: 86px; }
+}
