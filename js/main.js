@@ -316,15 +316,17 @@ if (!reducedMotion) {
 
 /* ---------- números contando ---------- */
 document.querySelectorAll('.count').forEach((el) => {
+  /* conta de novo toda vez que o número entra na tela (descendo ou subindo), no computador e no celular */
   const to = parseFloat(el.dataset.to), dec = parseInt(el.dataset.dec || '0', 10), suf = el.dataset.suffix || '';
   const fmt = (v) => v.toFixed(dec).replace('.', ',') + suf;
-  if (reducedMotion) { el.textContent = fmt(to); return; }
   const o = { v: 0 };
   el.textContent = fmt(0);
-  gsap.to(o, {
-    v: to, duration: 2, ease: 'power2.out',
-    scrollTrigger: { trigger: el, start: 'top 90%' },
-    onUpdate: () => { el.textContent = fmt(o.v); }
+  const tw = gsap.to(o, { v: to, duration: 2, ease: 'power2.out', paused: true, onUpdate: () => { el.textContent = fmt(o.v); } });
+  const zerar = () => { tw.pause(0); o.v = 0; el.textContent = fmt(0); };
+  ScrollTrigger.create({
+    trigger: el, start: 'top 92%', end: 'bottom 8%',
+    onEnter: () => tw.restart(), onEnterBack: () => tw.restart(),
+    onLeave: zerar, onLeaveBack: zerar
   });
 });
 
