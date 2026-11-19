@@ -285,3 +285,11 @@ footer { border-top: 1px solid rgba(201, 149, 94, .12); }
 #atuacao .area-card::before { background: linear-gradient(90deg, var(--couro-hi), var(--accent) 60%, transparent); }
 .progress span { background: linear-gradient(90deg, var(--couro), #C9955E) !important; }
 .faq-item[open] summary { color: var(--couro); }
+
+/* redes sociais no rodapé (19/11) */
+.foot-marca { display: flex; flex-direction: column; gap: 22px; }
+.foot-social { display: flex; gap: 12px; }
+.foot-social a { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; border: 1px solid rgba(201, 149, 94, .3); color: #E8C08C; transition: background .3s, color .3s, border-color .3s; }
+.foot-social a:hover { background: var(--couro, #7A2E2A); border-color: var(--couro, #7A2E2A); color: #fff; }
+.foot-social svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.foot-social svg .ponto { fill: currentColor; stroke: none; }
