@@ -399,3 +399,34 @@ html { background: #09090B; }   /* o "puxão" do iPhone no fim da página fica e
   #hero2 .h2-team { bottom: 30%; }
   #hero2 .h2-text { padding-bottom: 86px; }
 }
+
+/* ============================================================
+   CAPA NO CELULAR, v2 (19/11): a foto ocupa a capa inteira (sem faixa preta),
+   frase e botão por cima da parte de baixo da foto, widgets longe do rosto.
+   A frase não depende de animação para aparecer.
+   ============================================================ */
+@media (max-width: 768px) {
+  #hero2 { display: block; position: relative; height: 100svh; min-height: 560px; max-height: 900px; overflow: hidden; }
+  #hero2 .h2-retrato { inset: 0; width: 100%; height: 100%; min-height: 0; }
+  #hero2 .h2-retrato img { width: 100%; height: 100%; object-position: 50% 10%; }
+  #hero2 .h2-shade { background: linear-gradient(180deg, rgba(9, 9, 11, .6) 0%, rgba(9, 9, 11, 0) 16%, rgba(9, 9, 11, 0) 48%, rgba(9, 9, 11, .78) 66%, rgba(9, 9, 11, .96) 82%, #09090B 100%); }
+  #hero2 .h2-grid { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 0; z-index: 3; }
+  #hero2 .h2-visual { position: absolute; inset: 0; height: auto; min-height: 0; margin: 0; padding: 0; pointer-events: none; }
+  #hero2 .h2-visual > * { pointer-events: auto; }
+  #hero2 .h2-team { left: var(--pad); right: auto; top: 96px; bottom: auto; width: 104px; }
+  #hero2 .h2-team span { font-size: 12px; }
+  #hero2 .h2-badge { right: var(--pad); left: auto; top: 96px; bottom: auto; }
+  #hero2 .h2-name { right: var(--pad); left: auto; top: auto; bottom: 196px; }
+  #hero2 .h2-text { margin: 0; padding: 0 var(--pad) 30px; }
+  #hero2 .h2-text h1 { font-size: clamp(32px, 9vw, 40px); margin-bottom: 18px; }
+  #hero2 .h2-ctas .btn-pill { width: calc(100% - 70px); }
+  #hero2 .h2-text h1, #hero2 .h2-ctas { opacity: 1 !important; visibility: visible !important; }
+}
+@media (max-width: 768px) {
+  /* equipe e nome lado a lado logo acima da frase, longe do rosto */
+  #hero2 .h2-team { top: auto; bottom: 190px; width: 92px; padding: 6px 6px 8px; }
+  #hero2 .h2-team span { font-size: 11.5px; }
+  #hero2 .h2-name { bottom: 190px; max-width: calc(100% - 2 * var(--pad) - 104px); padding: 9px 12px; }
+  #hero2 .h2-name strong { font-size: 14px; }
+  #hero2 .h2-name span { font-size: 10.5px; }
+}

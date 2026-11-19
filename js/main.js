@@ -253,10 +253,13 @@ if (hero2 && !reducedMotion) {
   }
 
   /* scroll: o texto sobe e some, a foto desce mais devagar e cresce um pouco */
-  const st = { trigger: hero2, start: 'top top', end: 'bottom top', scrub: true };
-  gsap.to('.h2-text', { yPercent: -18, opacity: 0, ease: 'none', scrollTrigger: st });
-  gsap.to('.h2-visual', { yPercent: 10, ease: 'none', scrollTrigger: st });
-  gsap.to('.h2-retrato', { yPercent: 8, ease: 'none', scrollTrigger: st });
+  /* só no computador: no celular a frase fica sempre visível e a foto parada (19/11) */
+  if (!window.matchMedia('(max-width: 768px)').matches) {
+    const st = { trigger: hero2, start: 'top top', end: 'bottom top', scrub: true };
+    gsap.to('.h2-text', { yPercent: -18, opacity: 0, ease: 'none', scrollTrigger: st });
+    gsap.to('.h2-visual', { yPercent: 10, ease: 'none', scrollTrigger: st });
+    gsap.to('.h2-retrato', { yPercent: 8, ease: 'none', scrollTrigger: st });
+  }
 }
 /* botões "magnéticos": seguem o mouse de leve */
 if (!reducedMotion && window.matchMedia('(pointer: fine)').matches) {
