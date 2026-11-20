@@ -444,3 +444,27 @@ html { background: #09090B; }   /* o "puxão" do iPhone no fim da página fica e
   #hero2 .h2-name span { color: #8C5E2E; }
 }
 @media (max-width: 768px) { #hero2 .h2-team, #hero2 .h2-name { bottom: 214px; } }
+@media (max-width: 768px) {
+  /* vidro fosco bem transparente, estilo widget do iPhone */
+  #hero2 .h2-name, #hero2 .h2-team {
+    background: linear-gradient(145deg, rgba(246, 241, 232, .42), rgba(232, 214, 188, .22));
+    border: 1px solid rgba(255, 250, 240, .45);
+    backdrop-filter: blur(22px) saturate(1.6) brightness(1.08); -webkit-backdrop-filter: blur(22px) saturate(1.6) brightness(1.08);
+    box-shadow: 0 10px 30px rgba(9, 9, 11, .22), inset 0 1px 0 rgba(255, 255, 255, .35);
+    border-radius: 18px;
+  }
+  #hero2 .h2-name strong, #hero2 .h2-team span { color: #fff; text-shadow: 0 1px 8px rgba(9, 9, 11, .35); }
+  #hero2 .h2-name span { color: #F3DFC2; text-shadow: 0 1px 6px rgba(9, 9, 11, .35); }
+  #hero2 .h2-team img { border-radius: 12px; }
+}
+@media (max-width: 768px) {
+  /* flutuar de leve, um descompassado do outro (usa "translate", então não briga com a animação de entrada) */
+  @keyframes flutua-a { 0%, 100% { translate: 0 0; } 50% { translate: 0 -7px; } }
+  @keyframes flutua-b { 0%, 100% { translate: 0 0; } 50% { translate: 0 -5px; } }
+  #hero2 .h2-team { animation: flutua-a 4.2s ease-in-out infinite; }
+  #hero2 .h2-name { animation: flutua-b 5s ease-in-out .8s infinite; }
+  #hero2 .h2-badge { animation: flutua-b 3.6s ease-in-out .3s infinite; }
+}
+@media (max-width: 768px) and (prefers-reduced-motion: reduce) {
+  #hero2 .h2-team, #hero2 .h2-name, #hero2 .h2-badge { animation: none; }
+}
