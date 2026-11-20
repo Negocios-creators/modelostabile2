@@ -430,3 +430,17 @@ html { background: #09090B; }   /* o "puxão" do iPhone no fim da página fica e
   #hero2 .h2-name strong { font-size: 14px; }
   #hero2 .h2-name span { font-size: 10.5px; }
 }
+@media (max-width: 768px) {
+  /* o botão não pode ficar atrás da faixa: frase e botão sempre no lugar, sem o deslocamento da animação */
+  #hero2 .h2-text h1, #hero2 .h2-ctas { transform: none !important; }
+  #hero2 .h2-text { padding-bottom: 34px; }
+  /* cartões da capa em vidro bege (paleta do site) no lugar do escuro */
+  #hero2 .h2-name, #hero2 .h2-team {
+    background: rgba(246, 241, 232, .78); border: 1px solid rgba(232, 192, 140, .55);
+    backdrop-filter: blur(12px) saturate(1.2); -webkit-backdrop-filter: blur(12px) saturate(1.2);
+    box-shadow: 0 14px 34px rgba(9, 9, 11, .28);
+  }
+  #hero2 .h2-name strong, #hero2 .h2-team span { color: #18202B; }
+  #hero2 .h2-name span { color: #8C5E2E; }
+}
+@media (max-width: 768px) { #hero2 .h2-team, #hero2 .h2-name { bottom: 214px; } }
