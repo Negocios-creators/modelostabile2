@@ -450,3 +450,21 @@ footer { position: relative; z-index: 3; border-top: 1px solid var(--line); padd
 /* quem pediu menos movimento vê o vídeo no lugar da sequência */
 .rm #hero-canvas { display: none; }
 .rm #hero-video { display: block; }
+
+/* ============================================================
+   LOGO FINAL (25/11/2026): proporção nova (2,65 : 1), tamanhos maiores para ADVOGADOS ficar legível,
+   e abertura com o símbolo HS se desenhando
+   ============================================================ */
+.brand img { height: 58px; }
+#header.scrolled .brand img { height: 48px; }
+.foot-top img { height: 80px; }
+.contato-mark { width: 48px; }
+.pre-simb { width: 84px; height: 107px; overflow: visible; }
+.pre-simb path { fill: var(--accent); fill-opacity: 0; stroke: var(--accent); stroke-width: 6; stroke-dasharray: 100; stroke-dashoffset: 100;
+  animation: draw 1.3s var(--ease) forwards, preenche .7s 1.05s ease forwards; }
+@keyframes preenche { to { fill-opacity: 1; stroke-opacity: 0; } }
+@media (max-width: 768px) {
+  .brand img { height: 48px; }
+  #header.scrolled .brand img { height: 42px; }
+  .foot-top img { height: 70px; }
+}
